@@ -5,79 +5,307 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f4f7fb;
+  color: #172033;
 }
 
+
+/* NAVBAR */
+
 .navbar {
-  background-color: hwb(212 0% 3%);
-  color: white;
-  padding: 15px 40px;
+  width: 100%;
+  background-color: white;
+  padding: 18px 10%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  border-bottom: 1px solid #dddddd;
 }
 
 .navbar h2 {
   margin: 0;
+  font-size: 22px;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  align-items: center;
 }
 
 .nav-links a {
-  color: white;
+  color: #303b50;
   text-decoration: none;
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  color: #5138ee;
 }
+
+
+/* MAIN CONTENT */
 
 .container {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  padding: 50px 10%;
 }
 
-.card {
-  background-color: white;
-  width: 600px;
-  padding: 40px;
 
-  border-radius: 10px;
+/* HOME */
+
+.home {
+  width: 100%;
+}
+
+.home-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.home-title h1 {
+  margin: 0 0 12px 0;
+  font-size: 45px;
+}
+
+.home-title p {
+  max-width: 750px;
+  margin: auto;
+
+  color: #61708a;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+/* HOME ACTIVITY CARDS */
+
+.activity-grid {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.activity-card {
+  background-color: white;
+
+  padding: 25px;
+
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.activity-card h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-size: 20px;
+}
+
+.activity-card p {
+  min-height: 50px;
+
+  margin-bottom: 0;
+
+  color: #66758c;
+
+  line-height: 1.5;
+}
+
+
+/* ACTIVITY NUMBER */
+
+.number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e5e8ff;
+  color: #5138ee;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+}
+
+
+/* OPEN ACTIVITY BUTTON */
+
+.open-button {
+  display: block;
+
+  margin-top: 20px;
+  padding: 13px;
+
+  background-color: #5138ee;
+  color: white;
 
   text-align: center;
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-weight: bold;
+}
+
+.open-button:hover {
+  background-color: #3f2bd1;
+}
+
+
+/* ACTIVITY FORM CARD */
+
+.card {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 20px auto;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border-radius: 12px;
 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+/* FORM TITLE */
+
 .card h1 {
-  margin-top: 0;
+  margin: 0 0 30px 0;
+
+  font-size: 36px;
+  line-height: 1.2;
+
+  text-align: center;
 }
 
-button {
-  padding: 10px 20px;
+
+/* LABEL */
+
+.card label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 17px;
+  text-align: left;
+}
+
+
+/* INPUT */
+
+.card input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+
+/* FORM BUTTONS */
+
+.buttons {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.card button {
+  padding: 12px 25px;
+  margin: 5px;
+
+  background-color: #5138ee;
+  color: white;
+
   border: none;
   border-radius: 5px;
 
-  background-color: #222;
-  color: white;
+  font-size: 16px;
 
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #444;
+.card button:hover {
+  background-color: #3f2bd1;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 15px;
 
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* RESULT */
+
+.result {
+  margin-top: 25px;
+  padding: 20px;
+
+  background-color: #f4f7fb;
+
+  border-radius: 8px;
+}
+
+.result h2 {
+  margin-top: 0;
+}
+
+.result p {
+  margin: 8px 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    padding: 15px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 15px;
+  }
+
+  .container {
+    padding: 30px 20px;
+  }
+
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-title h1 {
+    font-size: 34px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .card h1 {
+    font-size: 28px;
+  }
 }
