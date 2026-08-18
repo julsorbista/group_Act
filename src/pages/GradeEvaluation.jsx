@@ -47,13 +47,38 @@ function GradeEvaluation() {
   return (
     <div className="card">
 
-      <h1>Student Grade Evaluation</h1>
+      <h1>
+        Student Grade Evaluation
+
+        <span
+          style={{
+            display: "block",
+            marginTop: "4px",
+            fontSize: "20px",
+            fontWeight: "normal",
+          }}
+        >
+          Activity 2
+        </span>
+      </h1>
 
       <label>Student Name</label>
-      <input type="text" placeholder="Enter student name" value={name} onChange={(event) => setName(event.target.value)}  />
+
+      <input
+        type="text"
+        placeholder="Enter student name"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
 
       <label>Score</label>
-      <input type="number" placeholder="Enter score (0-100)" value={score} onChange={(event) => setScore(event.target.value)}/>
+
+      <input
+        type="number"
+        placeholder="Enter score (0-100)"
+        value={score}
+        onChange={(event) => setScore(event.target.value)}
+      />
 
       <button onClick={evaluateGrade}>
         Evaluate
@@ -68,9 +93,9 @@ function GradeEvaluation() {
           {showResult ? (
             <>
               <h2>Result</h2>
-              <p> Student Name: {name} </p>
-              <p> Score: {score} </p>
-              <p>Remarks: {remarks} </p>
+              <p>Student Name: {name}</p>
+              <p>Score: {score}</p>
+              <p>Remarks: {remarks}</p>
             </>
           ) : (
             <p>{remarks}</p>
