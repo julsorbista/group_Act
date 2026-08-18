@@ -48,15 +48,17 @@ function GradeEvaluation() {
     <div className="card">
 
       <h1>Student Grade Evaluation</h1>
-      <label>Student Name</label>
 
-      <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+      <label>Student Name</label>
+      <input type="text" placeholder="Enter student name" value={name} onChange={(event) => setName(event.target.value)}  />
 
       <label>Score</label>
-      <input type="number" value={score} onChange={(event) => setScore(event.target.value)} />
+      <input type="number" placeholder="Enter score (0-100)" value={score} onChange={(event) => setScore(event.target.value)}/>
+
       <button onClick={evaluateGrade}>
         Evaluate
       </button>
+
       <button onClick={clearForm}>
         Clear
       </button>
@@ -75,6 +77,7 @@ function GradeEvaluation() {
           )}
         </div>
       )}
+
     </div>
   );
 }
