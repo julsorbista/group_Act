@@ -12,7 +12,7 @@ function App() {
 
       <nav className="navbar">
         <h2>React Activity Portal</h2>
-        <h2>palitan na lang yung UI draft lang ito </h2>
+        
 
         <div className="nav-links">
           <Link to="/">Home</Link>
@@ -30,6 +30,7 @@ function App() {
               <div className="card">
                 <h1>React Activity Portal</h1>
                 <p>Select an activity from the navigation bar.</p>
+                <h2>palitan na lang yung UI draft lang ito </h2>
               </div> 
           }/>
 
