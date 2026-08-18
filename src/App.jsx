@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 
 import GradeEvaluation from "./pages/GradeEvaluation";
@@ -6,74 +6,117 @@ import PasswordChecker from "./pages/PasswordChecker";
 import ElectricityBill from "./pages/ElectricityBill";
 import AttendanceChecker from "./pages/AttendanceChecker";
 
+const activities = [
+  {
+    number: 2,
+    title: "Student Grade Evaluation",
+    description:
+      "Enter a student's score and get an automatic remark based on grade ranges.",
+    path: "/activity2",
+  },
+  {
+    number: 3,
+    title: "Password Strength Checker",
+    description:
+      "Check password length and receive live feedback on how strong it is.",
+    path: "/activity3",
+  },
+  {
+    number: 4,
+    title: "Electricity Bill Calculator",
+    description:
+      "Calculate a customer's electricity bill based on kWh consumption and tiered rates.",
+    path: "/activity4",
+  },
+  {
+    number: 5,
+    title: "Employee Attendance Checker",
+    description:
+      "Check an employee's time-in and determine whether they are on time, late, or very late.",
+    path: "/activity5",
+  },
+];
+
 function App() {
   return (
     <BrowserRouter>
-
       <nav className="navbar">
-        <h2>React Activity Portal</h2>
+        <div className="brand">
+          <div className="brand-logo">R</div>
+          <h2>React Activity Portal</h2>
+        </div>
 
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/activity2">Activity 2</Link>
-          <Link to="/activity3">Activity 3</Link>
-          <Link to="/activity4">Activity 4</Link>
-          <Link to="/activity5">Activity 5</Link>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/activity2"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Activity 2
+          </NavLink>
+
+          <NavLink
+            to="/activity3"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Activity 3
+          </NavLink>
+
+          <NavLink
+            to="/activity4"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Activity 4
+          </NavLink>
+
+          <NavLink
+            to="/activity5"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Activity 5
+          </NavLink>
         </div>
       </nav>
 
       <div className="container">
-
         <Routes>
           <Route
             path="/"
             element={
               <div className="home">
-                <div className="home-title">
-                  <h1>React Activity Portal</h1>
-                  <h2>Palitan niyo na lang yun UI</h2>
-                </div>
+                <h1 className="home-title">React Activity Portal</h1>
+
+                <p className="home-subtitle">
+                  Four interactive React activities demonstrating state,
+                  events, conditional logic, validation, and calculations.
+                </p>
 
                 <div className="activity-grid">
-                  <div className="activity-card">
-                    <div className="number">2</div>
-                    <h2>Student Grade Evaluation</h2>
-                    <p> Enter a student's score and get an automatic remark based on grade ranges. </p>
-                    <Link to="/activity2" className="open-button">
-                      Open Activity
-                    </Link>
-                  </div>
+                  {activities.map((activity) => (
+                    <div className="activity-card" key={activity.number}>
+                      <div className="activity-badge">{activity.number}</div>
 
-                  <div className="activity-card">
-                    <div className="number">3</div>
-                    <h2>Password Strength Checker</h2>
-                    <p>Check password length and receive live feedback on how strong it is. </p>
-                    <Link to="/activity3" className="open-button">
-                      Open Activity
-                    </Link>
-                  </div>
+                      <h3>{activity.title}</h3>
 
-                  <div className="activity-card">
-                    <div className="number">4</div>
-                    <h2>Electricity Bill Calculator</h2>
-                    <p>Calculate a customer's electricity bill based on kWh consumption and tiered rates.</p>
-                    <Link to="/activity4" className="open-button">
-                      Open Activity
-                    </Link>
-                  </div>
+                      <p>{activity.description}</p>
 
-                  <div className="activity-card">
-                    <div className="number">5</div>
-                    <h2>Employee Attendance Checker</h2>
-                    <p>Check an employee's time-in and determine whether they are on time, late, or very late.</p>
-
-                    <Link to="/activity5" className="open-button">
-                      Open Activity
-                    </Link>
-                  </div>
+                      <NavLink to={activity.path} className="open-button">
+                        Open Activity
+                      </NavLink>
+                    </div>
+                  ))}
                 </div>
               </div>
-          }/>
+            }
+          />
+
           <Route path="/activity2" element={<GradeEvaluation />} />
           <Route path="/activity3" element={<PasswordChecker />} />
           <Route path="/activity4" element={<ElectricityBill />} />
