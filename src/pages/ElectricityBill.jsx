@@ -88,8 +88,10 @@ function ElectricityBill() {
         min="0"
       />
 
-      <button onClick={calculateBill}>Calculate Bill</button>
-      <button onClick={clearForm}>Clear</button>
+      <div className="button-row">
+        <button onClick={calculateBill}>Calculate Bill</button>
+        <button onClick={clearForm}>Clear</button>
+      </div>
 
       {error && <div className="result">{error}</div>}
 

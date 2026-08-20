@@ -88,8 +88,10 @@ function AttendanceChecker() {
         step="0.1"
       />
 
-      <button onClick={checkAttendance}>Check Attendance</button>
-      <button onClick={resetAttendance}>Reset</button>
+      <div className="button-row">
+        <button onClick={checkAttendance}>Check Attendance</button>
+        <button onClick={resetAttendance}>Reset</button>
+      </div>
 
       {error && <div className="result">{error}</div>}
 

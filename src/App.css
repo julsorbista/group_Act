@@ -99,6 +99,7 @@ body {
 .activity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
   gap: 24px;
   margin-top: 48px;
   text-align: left;
@@ -163,6 +164,7 @@ body {
 
 .open-button {
   display: block;
+  margin-top: auto;
   text-align: center;
   text-decoration: none;
   background-color: #fffffe;
@@ -219,9 +221,16 @@ body {
   font-size: 15px;
 }
 
-.card button {
-  width: calc(50% - 38px);
-  margin: 0 5px 25px 30px;
+.button-row {
+  display: flex;
+  gap: 30px;
+  margin: 0 30px 25px;
+}
+
+.card .button-row button {
+  flex: 1;
+  width: auto;
+  margin: 0;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -245,7 +254,6 @@ body {
   overflow-wrap: break-word;
 }
 
-/* Tablet and small laptop screens */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -279,7 +287,6 @@ body {
   }
 }
 
-/* Mobile phone screens */
 @media (max-width: 480px) {
   .navbar h2 {
     font-size: 18px;
@@ -335,22 +342,14 @@ body {
   margin: 0 auto 18px auto;
   }
 
-  .card button {
-  width: 90%;
-  margin: 0 auto 12px auto;
-  }
-
-  .card button + button {
-    margin-left: 20px;
-    margin-bottom: 20px;
+  .button-row {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 20px 20px;
   }
 
   .result {
     margin-left: 20px;
     margin-right: 20px;
   }
-
-  
-
-  
 }
