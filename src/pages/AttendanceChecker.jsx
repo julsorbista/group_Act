@@ -54,9 +54,23 @@ function AttendanceChecker() {
   };
 
   return (
-    <div className="card">
-      <h1>Employee Attendance Checker</h1>
+    
+  <div className="card">
+      <h1>
+        Employee Attendance Checker
 
+        <span
+          style={{
+            display: "block",
+            marginTop: "4px",
+            fontSize: "20px",
+            fontWeight: "normal",
+          }}
+        >
+          Activity 5
+        </span>
+      </h1>
+  
       <label>Employee Name</label>
       <input
         type="text"
@@ -99,5 +113,6 @@ function AttendanceChecker() {
     </div>
   );
 }
+
 
 export default AttendanceChecker;

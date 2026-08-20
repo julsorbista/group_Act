@@ -100,7 +100,7 @@ function App() {
 
                 <div className="activity-grid">
                   {activities.map((activity) => (
-                    <div className="activity-card" key={activity.number}>
+                    <div className={`activity-card activity-${activity.number}`} key={activity.number}>
                       <div className="activity-badge">{activity.number}</div>
 
                       <h3>{activity.title}</h3>
