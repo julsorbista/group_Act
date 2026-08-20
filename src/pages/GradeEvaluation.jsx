@@ -80,11 +80,11 @@ function GradeEvaluation() {
         onChange={(event) => setScore(event.target.value)}
       />
 
-      <button onClick={evaluateGrade}>
+      <button onClick={evaluateGrade} style={{ fontSize: "16px" }}>
         Evaluate
       </button>
 
-      <button onClick={clearForm}>
+      <button onClick={clearForm} style={{ fontSize: "16px" }}>
         Clear
       </button>
 
